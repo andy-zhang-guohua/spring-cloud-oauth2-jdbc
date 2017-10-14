@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: api-gateway
+zuul:
+  ignored-services: '*'
+  routes:
+    auth-server:
+      path: /uaa/**
+      serviceId: auth-server
+      sensitiveHeaders:
+      strip-prefix: false
+
